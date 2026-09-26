@@ -173,6 +173,12 @@ def main():
     print("Generating candidate pairs for Validation set...", flush=True)
     val_cands = blocker.generate_candidates_for_source(val_s1_df, train_s2_pool, "S2")
 
+    # Export candidate_pairs.tsv for final submission requirement
+    cand_tsv_path = os.path.join(EXP_DIR, "candidate_pairs.tsv")
+    all_cands = pd.concat([train_cands, val_cands], ignore_index=True)
+    all_cands.to_csv(cand_tsv_path, sep="\t", index=False)
+    print(f"Exported {len(all_cands):,} candidate pairs to {cand_tsv_path}", flush=True)
+
     # Step 5: Measure Class Ratio
     print("\n--- STEP 5: Class Ratio Measurement ---", flush=True)
     gt_pairs = set()
