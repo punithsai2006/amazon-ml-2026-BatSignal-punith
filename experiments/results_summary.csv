@@ -1,0 +1,4 @@
+Experiment,Training Strategy,Positives,Negatives,Ratio,Threshold,F_0.5,Runtime_Sec,Status
+Existing Baseline (Control),Full Imbalanced Candidate Set,7129,67871,9.52:1,0.38,0.620746,71.04,BASELINE/METRIC CONFIRMATION NOT VERIFIED
+Strategy A: Class Weighting,Balanced Class Weighting,7129,67871,9.52:1,0.84,0.620184,67.53,EXECUTED & VERIFIED
+Strategy B: Hard-Negative Mining,Top 5:1 Composite Sim Hard Negatives,7129,35645,5.0:1,0.9,0.206176,78.05,EXECUTED & VERIFIED
